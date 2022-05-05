@@ -1,0 +1,10 @@
+<Project>
+
+	<PropertyGroup>
+		<Version>1.0.0.88</Version>
+		<AssemblyVersion>1.0.0.88</AssemblyVersion>
+		<Company>N2N Connect Berhad</Company>
+		<Product>TCBOS.Reporting</Product>
+	</PropertyGroup>
+
+</Project>

@@ -1,0 +1,60 @@
+include:
+  - project: 'tcbos/solution_item'
+    ref: master
+    file: 
+      - '/SolutionItem/yml/build-dotnet-mvms.yml'
+      
+variables:
+  SOLUTION_DIR: .
+  SOLUTION_FILE: "TCBOS.Reporting.sln"
+  ENTRY_PROJECT_DIR: Src\Gateway\TCBOS.Reporting.Api
+  ENTRY_PROJECT_FILE: Src\Gateway\TCBOS.Reporting.Api\TCBOS.Reporting.Api.csproj
+
+stages:
+  - Init
+  - Build
+  - Test
+  - IncreaseVersion
+  - BuildRelease
+  - TestRelease
+  - GitPush
+  - PublishRelease
+ 
+default:
+  tags:
+    - build
+  
+Init:
+  extends:
+    - .Init
+
+Build:
+  extends:
+    - .Build
+    
+Test:
+  extends:
+    - .Test
+
+IncreaseVersion:
+  extends:
+    - .IncreaseVersion
+
+BuildRelease:
+  extends:
+    - .BuildRelease
+
+TestRelease:
+  extends:
+    - .TestRelease
+
+GitPush:
+  extends:
+    - .GitPush
+
+PublishRelease:
+  extends:
+    - .PublishRelease
+ 
+ 
+    
